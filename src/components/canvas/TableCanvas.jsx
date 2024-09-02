@@ -17,7 +17,6 @@ const TableCanvas = ({ children }) => {
         {children}
 
         <OrbitControls />
-        <LogCanvasInfo />
       </Canvas>
   )
 }
