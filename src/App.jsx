@@ -4,23 +4,20 @@ import { Table } from "./components/3d/Table"
 import TableCanvas from "./components/canvas/TableCanvas"
 import Footer from "./components/Footer"
 
-import lightWoodTexture from "/materials/table/legs/light-wood-texture.jpg"
-import darkWoodTexture from "/materials/table/legs/dark-wood-texture.jpg"
-import aluminumTexture from "/materials/table/legs/aluminum-texture.jpg"
 
-import blackMarbleTexture2 from "/materials/table/surface/black-marble-texture2.jpg"
-import seaBlueMarbleTexture from "/materials/table/surface/sea-blue-marble-texture.jpg"
+import blackTexture from "/materials/table/common/rustic-deep-blue-concrete-textured-background.jpg"
+import blackNoirTexture from "/materials/table/common/black-texture.jpg"
+import lightWoodTexture from "/materials/table/common/light-wood-texture.jpg"
 import purpleMarbleTexture from "/materials/table/surface/puple-marble-texture.jpg"
 import orangeMarbleTexture from "/materials/table/surface/orange-marble-texture.jpg"
-import darkGreenTexture from "/materials/table/surface/dark-green-marble-texture.jpg"
 
 import { IoCheckmark } from "react-icons/io5"
 
 function App() {
 
   const [table, setTable] = useState({
-    surface: seaBlueMarbleTexture,
-    legs: darkWoodTexture
+    surface: blackTexture,
+    legs: blackNoirTexture
   })
 
   return (
@@ -72,15 +69,15 @@ function App() {
                 <input
                   type="radio"
                   id="black-surface"
-                  value={blackMarbleTexture2}
-                  checked={table.surface === blackMarbleTexture2}
+                  value={blackTexture}
+                  checked={table.surface === blackTexture}
                   onChange={(e) => setTable(() => ({ ...table, surface: e.target.value }))}
                   name="surface-color"
                   className="peer sr-only"
                 />
                 <span>
                   <img
-                    src={blackMarbleTexture2}
+                    src={blackTexture}
                     alt="black-surface"
                     className="rounded-sm w-8 h-8 cursor-pointer"
                   /></span>
@@ -90,15 +87,15 @@ function App() {
                 <input
                   type="radio"
                   id="blue-surface"
-                  value={seaBlueMarbleTexture}
-                  checked={table.surface === seaBlueMarbleTexture}
+                  value={lightWoodTexture}
+                  checked={table.surface === lightWoodTexture}
                   onChange={(e) => setTable(() => ({ ...table, surface: e.target.value }))}
                   name="surface-color"
                   className="peer sr-only"
                 />
                 <span>
                   <img
-                    src={seaBlueMarbleTexture}
+                    src={lightWoodTexture}
                     alt="blue-surface"
                     className="rounded-sm w-8 h-8 cursor-pointer"
                   /></span>
@@ -141,24 +138,6 @@ function App() {
                   /></span>
               </label>
 
-              <label htmlFor="green-surface">
-                <input
-                  type="radio"
-                  id="green-surface"
-                  value={darkGreenTexture}
-                  checked={table.surface === darkGreenTexture}
-                  onChange={(e) => setTable(() => ({ ...table, surface: e.target.value }))}
-                  name="surface-color"
-                  className="peer sr-only"
-                />
-                <span>
-                  <img
-                    src={darkGreenTexture}
-                    alt="green-surface"
-                    className="rounded-sm w-8 h-8 cursor-pointer"
-                  />
-                </span>
-              </label>
             </div>
 
             <h4 className="mt-7 text-sm capitalize leading-loose text-zinc-900">
@@ -170,15 +149,15 @@ function App() {
                 <input
                   type="radio"
                   id="dark-legs"
-                  value={darkWoodTexture}
-                  checked={table.legs === darkWoodTexture}
+                  value={blackNoirTexture}
+                  checked={table.legs === blackNoirTexture}
                   onChange={(e) => setTable(() => ({ ...table, legs: e.target.value }))}
                   name="leg-color"
                   className="peer sr-only"
                 />
                 <span>
                   <img
-                    src={lightWoodTexture}
+                    src={blackNoirTexture}
                     alt="dark-legs"
                     className="rounded-sm w-8 h-8 cursor-pointer"
                   />
@@ -189,15 +168,15 @@ function App() {
                 <input
                   type="radio"
                   id="aluminum-legs"
-                  value={aluminumTexture}
-                  checked={table.legs === aluminumTexture}
+                  value={lightWoodTexture}
+                  checked={table.legs === lightWoodTexture}
                   onChange={(e) => setTable(() => ({ ...table, legs: e.target.value }))}
                   name="leg-colors"
                   className="peer sr-only"
                 />
                 <span>
                   <img
-                    src={aluminumTexture}
+                    src={lightWoodTexture}
                     alt="aluminum-leg"
                     className="rounded-sm w-8 h-8 cursor-pointer"
                   /></span>
